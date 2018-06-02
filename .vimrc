@@ -11,10 +11,33 @@ Plug 'rust-lang/rust.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" TODO: goimports
-let g:go_fmt_command = "goimports"
+
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = [
+              \ '\.py[cd]$', '\~$', '\.swo$', '\.swp$', '\.DS_Store$',
+              \ '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$',
+              \ ]
+let NERDTreeIndicatorMapCustom = {
+            \ 'Modified'  : '✹',
+            \ 'Staged'    : '✚',
+            \ 'Untracked' : '✭',
+            \ 'Renamed'   : '➜',
+            \ 'Unmerged'  : '═',
+            \ 'Deleted'   : '✖',
+            \ 'Dirty'     : '✗',
+            \ 'Clean'     : '✓',
+            \ 'Unknown'   : '?'
+            \ }
+
+
 " have to do this to make YCM works on C-family lang...
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 
 set tabstop=4
 set softtabstop=4
