@@ -7,6 +7,9 @@ Plug 'scrooloose/syntastic'
 Plug 'valloric/youcompleteme'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
