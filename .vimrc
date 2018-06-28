@@ -42,6 +42,10 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 
+syntax on
+set ignorecase
+set showmatch
+set showmode
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -54,5 +58,4 @@ set hlsearch
 " use system clipboard
 set clipboard=unnamed
 filetype on
-syntax on
 
