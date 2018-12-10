@@ -50,6 +50,7 @@ set expandtab
 set autoindent
 set backspace=indent,eol,start
 set scrolloff=10
+set encoding=utf-8
 filetype plugin on
 
 set statusline+=%#warningmsg#
@@ -64,7 +65,7 @@ let NERDTreeShowHidden=1
 
 
 " NERD Commenter settings
-let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
+" let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
 let g:NERDCompactSexyComs = 1 " Use compact syntax for prettified multi-line comments
 let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDCommentEmptyLines = 1 " Allow commenting and inverting empty lines (useful when commenting a region)
@@ -94,5 +95,6 @@ let g:go_metalinter_autosave = 1
 
 " vim-format settings
 au BufWrite * :Autoformat " auto format on save
-let g:formatter_yapf_style = 'pep8'
+" let g:formatter_yapf_style = 'pep8'
+let g:formatter_yapf_style = 'flake8'
 
