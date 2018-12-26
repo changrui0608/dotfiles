@@ -1,0 +1,20 @@
+# PS1='[\u@\h \W]\$ '
+PS1='\[\e[0;35m\][\D{%F %T}] \[\e[1;34m\]\u\[\e[0;36m\] \w \[\e[0m\] \n\$ '
+# PS1='\[\033[1;32m\]\u@\h \w $\[\033[0m\] '
+# PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+
+
+alias ls='ls --color=auto'
+alias ll='ls -alFh'
+alias la='ls -A'
+alias l='ls -CF'
+
+export LESS=-R
+export LESS_TERMCAP_mb=$'\E[1;31m'
+export LESS_TERMCAP_md=$'\E[1;36m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[1;32m'
+
