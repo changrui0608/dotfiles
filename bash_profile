@@ -44,6 +44,7 @@ function set_lang()
 set_lang
 unset set_lang
 
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -61,6 +62,7 @@ alias la='ls -Ah'
 alias l='ls -CFh'
 
 
+# rustlang
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
@@ -77,13 +79,12 @@ if [ -f $HOME/.proxy.sh ]; then
 	. $HOME/.proxy.sh
 fi
 
+# allow PHP Composer run as root
+export COMPOSER_ALLOW_SUPERUSER=1
 
-
-# export LESS=-R
-# export LESS_TERMCAP_mb=$'\E[1;31m'
-# export LESS_TERMCAP_md=$'\E[1;36m'
-# export LESS_TERMCAP_me=$'\E[0m'
-# export LESS_TERMCAP_se=$'\E[0m'
-# export LESS_TERMCAP_so=$'\E[01;44;33m'
-# export LESS_TERMCAP_ue=$'\E[0m'
-# export LESS_TERMCAP_us=$'\E[1;32m'
+# php composer bin path
+COMPOSER_BIN_PATH="$HOME/.config/composer/vendor/bin"
+if [ -d COMPOSER_BIN_PATH ]; then
+    export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+fi
+unset COMPOSER_BIN_PATH
