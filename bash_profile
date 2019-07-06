@@ -50,7 +50,7 @@ unset set_prompt
 function set_lang()
 {
     # keep default LANG for tty
-    if [[ ${TERM,,} =~ "linux" ]]; then
+    if [[ ${TERM} =~ "linux" ]]; then
         return
     fi
 
@@ -105,13 +105,3 @@ fi
 if [ -f $HOME/.proxy.sh ]; then
     . $HOME/.proxy.sh
 fi
-
-# allow PHP Composer run as root
-export COMPOSER_ALLOW_SUPERUSER=1
-
-# php composer bin path
-COMPOSER_BIN_PATH="$HOME/.config/composer/vendor/bin"
-if [ -d COMPOSER_BIN_PATH ]; then
-    export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-fi
-unset COMPOSER_BIN_PATH

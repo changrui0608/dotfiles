@@ -11,5 +11,14 @@ alias ll='ls -alFh'
 alias la='ls -Ah'
 alias l='ls -CFh'
 
-alias g++='g++ -std=c++17'
+alias g++='g++ --std=c++17'
 
+export PYTHONDONTWRITEBYTECODE="_"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export RUSTUP_DIST_SERVER='https://mirrors.tuna.tsinghua.edu.cn/rustup'
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
