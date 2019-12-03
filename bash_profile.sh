@@ -39,10 +39,10 @@ function set_prompt()
     local RESET="\e[0m"
 
     if [ -x "$(command -v tput)" ] && [ $(tput colors) -ge 8 ]; then
-        export PS1="${GREEN}[\D{%F %T}] ${YELLOW}\u${GREY}@${PURPLE}\h ${CYAN}\w ${RESET} \n\\$ "
+	    export PS1="${GREEN}[\D{%F %T}] ${YELLOW}\u${GREY}@${PURPLE}\H${GREY}:${CYAN}\$PWD ${RESET} \n\\$ "
     else
         export PS1="[\D{%F %T}] \u@\h \w \n\\$ "
-    fi	
+    fi
 }
 set_prompt
 unset set_prompt
@@ -89,19 +89,15 @@ alias l='ls -CFh'
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
+# go path bin
+export PATH=$PATH:${HOME}/go/bin
 
-# python
+# python don't write byte code
 export PYTHONDONTWRITEBYTECODE="_"
 
 
-# settings for macOS
-if [[ "$OSTYPE" =~ "darwin" ]]; then
-    export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
-    export CLICOLOR=1
-fi
-
-
 # if a proxy configure is wanted (exists), load it
-if [ -f $HOME/.proxy.sh ]; then
-    . $HOME/.proxy.sh
-fi
+# if [ -f $HOME/.proxy.sh ]; then
+#     . $HOME/.proxy.sh
+# fi
+
